@@ -9,6 +9,6 @@ RUN poetry install --no-root -vvv --sync
  
 COPY src/sample_api  /usr/src/app
 
-EXPOSE 3000
+EXPOSE 3003-3000
 ENTRYPOINT ["poetry", "run", "fastapi", "dev", "--host", "0.0.0.0", "--port", "3000", "main.py"]
 # CMD poetry run fastapi dev --host 0.0.0.0 --port 3000 main.py 
