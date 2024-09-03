@@ -1,5 +1,9 @@
 Sample-api CHANGELOG
 =============================
+1.1.0
+------
+[Gulfam]
+- Added github workflows and workflow to test the api and build and push the image
 
 1.1.0
 ------
