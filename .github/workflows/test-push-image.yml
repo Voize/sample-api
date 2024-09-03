@@ -39,9 +39,17 @@ jobs:
       run: |
         ls ${{ github.workspace }}
     - run: echo "🍏 This job's status is ${{ job.status }}." 
+
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
     - name: Call a Bash Script
       run:  bash ${GITHUB_WORKSPACE}/run-unit-tests.sh
-      
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
     # - name: Build the Docker image
     #   run: docker build  --file Dockerfile --tag my-image-name:$(date +%s) \
     #        --platform linux/arm/v7,linux/arm64/v8,linux/amd64 \ --tag your-username/multiarch-example:buildx-latest .
